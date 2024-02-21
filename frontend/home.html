@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+    <header>
+        <nav>
+            <a href="#home">HOME</a> |
+            <a href="#menu">MENU</a> |
+            <a href="#location">LOCATION</a> |
+            <a href="#aboutus">ABOUT US</a> |
+            <a href="#contactus">CONTACT US</a>
+        </nav>
+    </header>
+
+    <section id="home">
+		<img src="poster.png" >
+        <!-- Add images here -->
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="grid-container">
+        <img src="menu1.jpg" alt="Menu item 1">
+        <img src="menu2.jpg" alt="Menu item 2">
+        <img src="menu3.jpg" alt="Menu item 3">
+    </div>
+    </section>
+
+    <section id="location">
+        <h2>Location</h2>
+        <p>Pur Road Bhilwara, Rajasthan</p>
+        <!-- Add map widget here -->
+    </section>
+
+    <section id="contactus">
+        <h2>Contact Us</h2>
+        <p>Got questions? Want to place an order? Call us at +917665186275 or email us at mriasgyani@gmail.com</p>
+    </section>
+
+	
+ <iframe class="chat-bot" width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/26e44813-1fb1-492f-a8b8-6f745839704e"></iframe>
+	</div>
+
+    <head>
+        <title>Chatbot</title>
+        <style>
+          .chat-bot {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 430px;
+            border: none;
+            z-index: 9999;
+          }
+      
+          .chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 9999;
+          }
+      
+          .chatbot-toggle:hover + .chat-bot {
+            display: block;
+          }
+        </style>
+      </head>
+      <body>
+        <div id="chatbotToggle" class="chatbot-toggle" onclick="toggleChatbot()">
+          Mira-Chatbot
+        </div>
+        <iframe id="chatbotFrame" class="chat-bot" allow="microphone;"></iframe>
+      
+        <script>
+          var chatbotVisible = false;
+      
+          function toggleChatbot() {
+            var iframe = document.getElementById('chatbotFrame');
+            chatbotVisible = !chatbotVisible;
+            iframe.style.display = chatbotVisible ? 'block' : 'none';
+      
+            // Set the source only if the iframe is visible
+            if (chatbotVisible) {
+              iframe.src = "https://console.dialogflow.com/api-client/demo/embedded/26e44813-1fb1-492f-a8b8-6f745839704e";
+            }
+          }
+        </script>
+      </body>
+</body>
+</html>
